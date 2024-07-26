@@ -20,7 +20,7 @@ data class Funding(
 
     @CreatedDate
     @Column(name = "funding_date")
-    val fundingDate: LocalDate? = null,
+    val fundingDate: LocalDate? = LocalDate.now(),
 
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)

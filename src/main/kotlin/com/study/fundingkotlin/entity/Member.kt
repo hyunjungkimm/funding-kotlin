@@ -18,7 +18,7 @@ data class Member(
     val memberName : String,
     @Column(name = "created_at")
     @CreatedDate
-    val createdAt : LocalDateTime,
+    val createdAt : LocalDateTime?= LocalDateTime.now(),
     @JsonManagedReference
     @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
     val fundingList : List<Funding> = ArrayList()
